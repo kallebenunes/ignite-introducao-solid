@@ -1,3 +1,4 @@
+import { Response } from "express";
 import request from "supertest";
 import { v4 } from "uuid";
 
@@ -102,7 +103,7 @@ describe("[GET] /users", () => {
     });
 
     usersRepository.turnAdmin(user1);
-
+    console.log(usersRepository.list());
     const user2 = usersRepository.create({
       name: String(Math.random()),
       email: String(Math.random()),
